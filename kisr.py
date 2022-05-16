@@ -47,7 +47,7 @@ def main():
             b2= diff1 > 2
             b4= diff1 == 3
             df1["The total value of the company's investments in 2019"]= np.where(b1, 'background-color: {}'.format(r), df1["The total value of the company's investments in 2019"])
-            df["The total value of the company's investments in 2019"]=np.where(b4, df["The total value of the company's investments in 2019"]+1 , df["The total value of the company's investments in 2019"])
+            #df["The total value of the company's investments in 2019"]=np.where(b4, df["The total value of the company's investments in 2019"]+1 , df["The total value of the company's investments in 2019"])
             df1["The total value of the company's investments in 2019"]= np.where(b2, 'background-color: {}'.format(r), df1["The total value of the company's investments in 2019"])
     
     
