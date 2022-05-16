@@ -53,7 +53,7 @@ def main():
     
     
     
-            return df1
+            #return df1
         da=df.style.apply(highlight_greater, axis =None)
         st.dataframe(da)
         
