@@ -35,7 +35,9 @@ def main():
       
     df = get_df(file)
     st.write("**Data has been loaded Successfully**")
-
+    if st.checkbox('Show Raw Data'):
+        st.subheader('Raw Data')
+        st.write(df)
     if choice == 'validation':
         def highlight_greater(df):
             r = 'tomato'
@@ -53,7 +55,7 @@ def main():
     
     
     
-            #return df1
+            return df1
         da=df.style.apply(highlight_greater, axis =None)
         st.dataframe(da)
         
