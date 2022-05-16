@@ -17,5 +17,5 @@ showErrorDetails = true
 fileWatcherType = "auto"
 enableXsrfProtection = true
 runOnSave = true
-maxUploadSize = 200
-maxMessageSize = 200
+maxUploadSize = 500
+maxMessageSize = 500
