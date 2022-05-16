@@ -37,7 +37,6 @@ def main():
     st.write("**Data has been loaded Successfully**")
 
     if choice == 'validation':
-        
         def highlight_greater(df):
             r = 'tomato'
             df1 = pd.DataFrame(' ', index=df.index, columns=df.columns)
@@ -45,35 +44,16 @@ def main():
             diff1=df["The total value of the company's investments in 2020"]-df["The total value of the company's investments in 2019"]
             b1= diff1 < -2 
             b2= diff1 > 2
-            #b4= diff1 == 3
+        
             df1["The total value of the company's investments in 2019"]= np.where(b1, 'background-color: {}'.format(r), df1["The total value of the company's investments in 2019"])
-            #df["The total value of the company's investments in 2019"]=np.where(b4, df["The total value of the company's investments in 2019"]+1 , df["The total value of the company's investments in 2019"])
+    
             df1["The total value of the company's investments in 2019"]= np.where(b2, 'background-color: {}'.format(r), df1["The total value of the company's investments in 2019"])
     
     
     
-           
-    
-            
             return df1
-        da=df.style.apply(highlight_greater, axis =None) 
-        
+        da=df.style.apply(highlight_greater, axis =None)
         st.dataframe(da)
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         
     
         
