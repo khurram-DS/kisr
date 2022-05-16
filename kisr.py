@@ -52,11 +52,11 @@ def main():
     
     
     
-            return df1
+            #return df1
     
             b4= diff1==3
             df1["The total value of the company's investments in 2019"]=np.where(b4, df1["The total value of the company's investments in 2019"]+1 , df1["The total value of the company's investments in 2019"])
-            
+            return df1
         da=df.style.apply(highlight_greater, axis =None)
         st.dataframe(da)
         
