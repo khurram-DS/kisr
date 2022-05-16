@@ -56,7 +56,7 @@ def main():
     
             
             return df1
-        da=df.style.apply(highlight_greater, axis =None) 
+        da=df1.style.apply(highlight_greater, axis =None) 
         
         st.dataframe(da)
         
