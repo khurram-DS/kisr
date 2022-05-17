@@ -49,10 +49,57 @@ def main():
             a1= percent_diff <= -70 
             a2= percent_diff >= 70
             
+            first_number=df['The total Kuwaiti workers 2020']
+            second_number=df['Total Kuwaiti employment 2021']
+            percent_diff = ((second_number - first_number)/first_number) * 100
+            a11= percent_diff <= -70 
+            a21= percent_diff >= 70
+         # non
+            first_number=df['Total non- Kuwaiti employment 2019']
+            second_number=df['Total non Kuwaiti employment 2020']
+            percent_diff = ((second_number - first_number)/first_number) * 100
+            b1= percent_diff <= -70 
+            b2= percent_diff >= 70
+            
+            first_number=df['Total non Kuwaiti employment 2020']
+            second_number=df['The total non -Kuwaiti employment 2021']
+            percent_diff = ((second_number - first_number)/first_number) * 100
+            b11= percent_diff <= -70 
+            b21= percent_diff >= 70
+        
+        
+        
+        
+        
+        
+        
             df1 = pd.DataFrame(' ', index=df.index, columns=df.columns)
             
             df1['The total Kuwaiti workers 2020'] = np.where(a1, 'background-color: {}'.format(r), df1['The total Kuwaiti workers 2020'])
             df1['The total Kuwaiti workers 2020'] = np.where(a2, 'background-color: {}'.format(r), df1['The total Kuwaiti workers 2020'])
+            
+            df1['Total Kuwaiti employment 2021'] = np.where(a11, 'background-color: {}'.format(r), df1['Total Kuwaiti employment 2021'])
+            df1['Total Kuwaiti employment 2021'] = np.where(a21, 'background-color: {}'.format(r), df1['Total Kuwaiti employment 2021'])
+            
+            
+            df1['Total non Kuwaiti employment 2020'] = np.where(a1, 'background-color: {}'.format(r), df1['Total non Kuwaiti employment 2020'])
+            df1['Total non Kuwaiti employment 2020'] = np.where(a2, 'background-color: {}'.format(r), df1['Total non Kuwaiti employment 2020'])
+            
+            df1['The total non -Kuwaiti employment 2021'] = np.where(a11, 'background-color: {}'.format(r), df1['The total non -Kuwaiti employment 2021'])
+            df1['The total non -Kuwaiti employment 2021'] = np.where(a21, 'background-color: {}'.format(r), df1['The total non -Kuwaiti employment 2021'])
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
             
             return df1
         da=df.style.apply(highlight_greater, axis =None)
