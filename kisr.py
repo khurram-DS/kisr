@@ -41,21 +41,19 @@ def main():
     if choice == 'validation':
         def highlight_greater(df):
             r = 'tomato'
-            df1 = pd.DataFrame(' ', index=df.index, columns=df.columns)
+            
         
-            diff1=df["The total value of the company's investments in 2020"]-df["The total value of the company's investments in 2019"]
-            b1= diff1 < -2 
-            b2= diff1 > 2
-            b4= diff1==3
+            first_number=df['The total Kuwaiti workers 2019']
+            second_number=df['The total Kuwaiti workers 2020']
+            percent_diff = ((second_number - first_number)/first_number) * 100
+            a1= percent_diff <= -70 
+            a2= percent_diff >= 70
             
+            df1 = pd.DataFrame(' ', index=df.index, columns=df.columns)
             
-            df1["The total value of the company's investments in 2019"]= np.where(b1, 'background-color: {}'.format(r), df1["The total value of the company's investments in 2019"])
+            df1['The total Kuwaiti workers 2020'] = np.where(a1, 'background-color: {}'.format(r), df1['The total Kuwaiti workers 2020'])
+            df1['The total Kuwaiti workers 2020'] = np.where(a2, 'background-color: {}'.format(r), df1['The total Kuwaiti workers 2020'])
             
-            df1["The total value of the company's investments in 2019"]= np.where(b2, 'background-color: {}'.format(r), df1["The total value of the company's investments in 2019"])
-            df["The total value of the company's investments in 2019"]=np.where(b4, df["The total value of the company's investments in 2019"]+1 , df["The total value of the company's investments in 2019"])
-    
-    
-    
             return df1
         da=df.style.apply(highlight_greater, axis =None)
         st.dataframe(da)
